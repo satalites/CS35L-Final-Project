@@ -3,6 +3,7 @@ import './App.css';
 import { Auth } from './components/Auth'
 import { Chat } from './components/Chat'
 import { Drawings } from './components/Drawings'
+import { MusicPlayer } from './components/MusicPlayer';
 import { signOut } from 'firebase/auth'
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore' 
 import Cookies from 'universal-cookie'
@@ -162,6 +163,9 @@ function App() {
       </head>
         {room ? (
           <div className="main-room">
+                    <div className="App">
+            <MusicPlayer />
+        </div>
   <div className="drawing-area">
   <div className="drawings-scroll">
     <Drawings room={room} />
