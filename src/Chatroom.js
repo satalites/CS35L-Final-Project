@@ -27,6 +27,7 @@ export const Chatroom = () => {
   const [drawing, setDrawing] = useState(false);
   const [tool, setTool] = useState("pencil");
   const [color, setColor] = useState("black");
+  const [opacity, setOpacity] = useState(1); // New: Add opacity state
 
   const strokeWidths = {
     pen: 0.3,
@@ -48,6 +49,23 @@ export const Chatroom = () => {
       };
     sendJoinMessage();
   }, [room, username]);
+
+  // New: Helper function to convert color to RGBA with opacity
+  const convertToRGBA = (colorName, opacity) => {
+    const colorMap = {
+      red: "255,0,0",
+      orange: "255,165,0", 
+      yellow: "255,255,0",
+      green: "0,128,0",
+      blue: "0,0,255",
+      purple: "128,0,128",
+      pink: "255,192,203",
+      brown: "165,42,42",
+      black: "0,0,0"
+    };
+    const rgb = colorMap[colorName] || "0,0,0";
+    return `rgba(${rgb},${opacity})`;
+  };
   
 
   const startDrawing = (e) => {
@@ -60,7 +78,7 @@ export const Chatroom = () => {
 
     if (tool !== "eraser") {
       ctx.lineWidth = strokeWidths[tool] || 1.0;
-      ctx.strokeStyle = color;
+      ctx.strokeStyle = convertToRGBA(color, opacity); // Updated: Use opacity
     }
   };
 
@@ -166,6 +184,21 @@ export const Chatroom = () => {
                       {c}
                     </button>
                   ))}
+                </div>
+
+                {/* New: Add opacity slider */}
+                <div className="opacity-control">
+                  <label htmlFor="opacity-slider">Opacity:</label>
+                  <input
+                    id="opacity-slider"
+                    type="range"
+                    min="0.1"
+                    max="1"
+                    step="0.1"
+                    value={opacity}
+                    onChange={(e) => setOpacity(parseFloat(e.target.value))}
+                  />
+                  <span>{opacity}</span>
                 </div>
 
                 <div className="setting-buttons">
