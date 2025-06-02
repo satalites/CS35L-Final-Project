@@ -24,12 +24,12 @@ export const Chatroom = () => {
 
   const canvasRef = useRef(null);
   const ctxRef = useRef(null);
-  const fullscreenCanvasRef = useRef(null); // New: Add fullscreen canvas ref
+  const fullscreenCanvasRef = useRef(null);
   const [drawing, setDrawing] = useState(false);
   const [tool, setTool] = useState("pencil");
   const [color, setColor] = useState("black");
   const [opacity, setOpacity] = useState(1);
-  const [fullscreenMode, setFullscreenMode] = useState(false); // New: Add fullscreen state
+  const [fullscreenMode, setFullscreenMode] = useState(false);
 
   const strokeWidths = {
     pen: 0.3,
@@ -69,11 +69,11 @@ export const Chatroom = () => {
     return `rgba(${rgb},${opacity})`;
   };
 
-  // New: Helper function to get active canvas
+  // Helper function to get active canvas
   const getActiveCanvas = () => 
     fullscreenMode ? fullscreenCanvasRef.current : canvasRef.current;
 
-  // New: Toggle fullscreen mode
+  // Toggle fullscreen mode
   const toggleFullscreen = () => {
     setFullscreenMode(!fullscreenMode);
   };
@@ -82,7 +82,7 @@ export const Chatroom = () => {
   const startDrawing = (e) => {
     setDrawing(true);
     
-    const canvas = getActiveCanvas(); // Updated: Use active canvas
+    const canvas = getActiveCanvas();
     if (!canvas) return;
     
     const ctx = canvas.getContext("2d");
@@ -116,21 +116,21 @@ export const Chatroom = () => {
 
   const stopDrawing = () => {
     setDrawing(false);
-    const canvas = getActiveCanvas(); // Updated: Use active canvas
+    const canvas = getActiveCanvas();
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     ctx.closePath();
   };
 
   const clearCanvas = () => {
-    const canvas = getActiveCanvas(); // Updated: Use active canvas
+    const canvas = getActiveCanvas();
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   };
 
   const saveCanvasImage = async () => {
-    const canvas = getActiveCanvas(); // Updated: Use active canvas
+    const canvas = getActiveCanvas();
     if (!canvas) return;
     
     const imageDataUrl = canvas.toDataURL("image/png");
@@ -151,6 +151,84 @@ export const Chatroom = () => {
   if (!room) {
     navigate("/");
     return null;
+  }
+
+  // New: Fullscreen mode render
+  if (fullscreenMode) {
+    return (
+      <div style={{ display: "flex", height: "100vh", width: "100vw" }}>
+        {/* Sidebar with tools and colors */}
+        <div
+          className="tool-sidebar"
+          style={{
+            width: "200px",
+            padding: "10px",
+            backgroundColor: "#f5f5f5",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+          }}
+        >
+          {/* Tool buttons */}
+          <div className="fullscreen-tools">
+            {["pen", "pencil", "marker", "brush", "eraser"].map((t) => (
+              <button
+                key={t}
+                onClick={() => setTool(t)}
+                style={{
+                  margin: "2px 0",
+                  padding: "8px 12px",
+                  backgroundColor: tool === t ? "#007bff" : "#e9ecef",
+                  color: tool === t ? "white" : "black",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer"
+                }}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+          
+          {/* Back button placeholder */}
+          <div style={{ marginTop: "20px" }}>
+            <button 
+              onClick={() => setFullscreenMode(false)}
+              style={{
+                padding: "8px 12px",
+                backgroundColor: "#6c757d",
+                color: "white",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer"
+              }}
+            >
+              Back
+            </button>
+          </div>
+        </div>
+
+        {/* Fullscreen Canvas placeholder */}
+        <div style={{ 
+          flexGrow: 1, 
+          backgroundColor: "#ffffff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}>
+          <canvas
+            ref={fullscreenCanvasRef}
+            width={window.innerWidth - 200}
+            height={window.innerHeight}
+            onMouseDown={startDrawing}
+            onMouseMove={draw}
+            onMouseUp={stopDrawing}
+            onMouseLeave={stopDrawing}
+            style={{ display: "block", border: "1px solid #ccc" }}
+          />
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -224,7 +302,6 @@ export const Chatroom = () => {
                 </div>
 
                 <div className="setting-buttons">
-                  {/* New: Add fullscreen button */}
                   <button className="tool-button" onClick={toggleFullscreen}>
                     Fullscreen Mode
                   </button>
