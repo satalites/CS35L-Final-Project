@@ -10,7 +10,7 @@ import Chatroom from "./Chatroom";
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

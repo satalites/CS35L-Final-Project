@@ -123,6 +123,108 @@ html, body, #root {
   height: 25%;
 }
 
+.collage-image {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.95;
+}
+
+.img-top-left {
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+
+.img-top-right {
+  top: 40px;
+  right: 30px;
+  width: 120px;
+}
+
+.img-bottom-left {
+  bottom: 30px;
+  left: 40px;
+  width: 90px;
+}
+
+.img-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  width: 110px;
+}
+
+.img-center-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 80px;
+}
+
+.img-center-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 80px;
+}
+
+.collage-image {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.img-top-left {
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+
+.img-top-right {
+  top: 40px;
+  right: 30px;
+  width: 120px;
+}
+
+.img-bottom-left {
+  bottom: 30px;
+  left: 40px;
+  width: 90px;
+}
+
+.img-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  width: 110px;
+}
+
+.img-center-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 80px;
+}
+
+.img-center-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 80px;
+}
+
+.collage-image {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.img-top-left { top: 20px; left: 20px; width: 100px; }
+.img-top-right { top: 40px; right: 30px; width: 120px; }
+.img-bottom-left { bottom: 30px; left: 40px; width: 90px; }
+.img-bottom-right { bottom: 20px; right: 20px; width: 110px; }
+.img-center-left { top: 50%; left: 0; transform: translateY(-50%); width: 80px; }
+.img-center-right { top: 50%; right: 0; transform: translateY(-50%); width: 80px; }
 
 @keyframes App-logo-spin {
   from {
