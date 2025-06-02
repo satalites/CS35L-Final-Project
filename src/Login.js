@@ -11,14 +11,15 @@ function Login() {
 
   useEffect(() => {
       const collageImages = [
-        { src: "/assets/jake.png", className: "img-top-left" },
-        { src: "/assets/face.png", className: "img-top-right" },
-        { src: "/assets/face_carrot.png", className: "img-bottom-left" },
-        { src: "/assets/ball.png", className: "img-bottom-right" },
-        { src: "/assets/derp.png", className: "img-center-left" },
-        { src: "/assets/coolcat.png", className: "img-center-right" }
+        { src: "/collage/jake.png", className: "img-top-left" },
+        { src: "/collage/face.png", className: "img-top-right" },
+        { src: "/collage/face_carrot.png", className: "img-bottom-left" },
+        { src: "/collage/ball.png", className: "img-bottom-right" },
+        { src: "/collage/derp.png", className: "img-center-left" },
+        { src: "/collage/coolcat.png", className: "img-center-right"},
+        { src: "/collage/cat.png", className: "img-center-right"},
+        { src: "/collage/ball.png", className: "img-center-right" }
       ];
-
       const addedImages = collageImages.map(imgData => {
         const img = document.createElement("img");
         img.src = imgData.src;
@@ -54,8 +55,8 @@ function Login() {
   return (
     <div className="login">
       <div className="login-content">
-        <h1>welcome to 1000 words</h1>
-        <button onClick={signInWithGoogle}>google sign in</button>
+        <h1>welcome &nbsp;&nbsp;to &nbsp;1000words</h1>
+        <button onClick={signInWithGoogle}>draw & chat</button>
       </div>
     </div>
   );

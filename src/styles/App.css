@@ -2,10 +2,25 @@
   cursor: url('../assets/catcursor.png'), auto;
 }
 
+@font-face {
+  font-family: 'ArcadeClassic';
+  src: url('../fonts/ARCADECLASSIC.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LowresPixel';
+  src: url('../fonts/LowresPixel-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
+  
 }
 
 .app-container {

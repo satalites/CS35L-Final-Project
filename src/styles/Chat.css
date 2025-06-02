@@ -22,6 +22,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'LowresPixel', monospace;
   }
   
   .send-button:hover {
@@ -37,6 +38,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'LowresPixel', monospace;
   }
   
   .tool-button:hover {
@@ -67,12 +69,14 @@
     width: 40%;
     overflow-y: auto;
     padding: 1rem;
+    font-family: 'LowresPixel', monospace;
   }
 
   /* Remove body scrolling */
 html, body {
     height: 100%;
     margin: 0;
+    font-family: 'ArcadeClassic', sans-serif;
     overflow: hidden;
   }
   
@@ -194,12 +198,14 @@ html, body {
     flex-direction: column;
     height: 100%;
     overflow: hidden;
+    font-family: 'LowresPixel', monospace;
   }
   
   .chat-header {
     padding: 0.5rem 1rem;
     border-bottom: 1px solid #ccc;
     background: #fff;
+    
   }
   
   .messages {
@@ -227,5 +233,6 @@ html, body {
     margin-right: 0.5rem;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-family: 'LowresPixel', monospace;
   }
   

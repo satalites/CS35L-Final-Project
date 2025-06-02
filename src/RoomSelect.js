@@ -42,7 +42,7 @@ function RoomSelect() {
     <Header />
     <div className="room-selection-container">
       <div className="rooms-list">
-        <h1 className="room-title">₍ᐢ. .ᐢ₎ ₊˚⊹♡ Select a Room .𖥔 ݁ ˖𓂃.☘︎ ݁˖</h1>
+        <h1 className="room-title">₍ᐢ. .ᐢ₎ ₊˚⊹♡ Select a&nbsp;&nbsp; Room .𖥔 ݁ ˖𓂃.☘︎ ݁˖</h1>
         <div className="nickname-row">
             <label htmlFor="nickname-input" className="nickname-label">Nickname:</label>
             <input

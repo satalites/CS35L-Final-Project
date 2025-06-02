@@ -6,6 +6,7 @@
     width: 100vw;
     background-color: #feebeb;
     font-family: sans-serif;
+    font-family: 'LowresPixel', monospace;
   }
   
   .rooms-list {
@@ -13,6 +14,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'ArcadeClassic', sans-serif;
   }
   
   .room-title {
@@ -20,6 +22,7 @@
     margin-bottom: 2rem;
     color: #333;
     font-weight: bold;
+    font-family: 'ArcadeClassic', sans-serif;
   }
   
   .room-btn {
@@ -32,6 +35,7 @@
     background-color: #9D8189;
     color: white;
     transition: background-color 0.3s ease;
+    font-family: 'ArcadeClassic', sans-serif;
   }
   
   .room-btn:hover {
@@ -44,6 +48,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'LowresPixel', monospace;
   }
   
   .room-input {
@@ -54,6 +59,7 @@
     border: 1px solid #ccc;
     width: 300px;
     text-align: center;
+    font-family: 'LowresPixel', monospace;
   }
   
   .nickname-row {
@@ -61,12 +67,14 @@
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 2rem;
+    
   }
   
   .nickname-label {
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
+    
   }
   
   .nickname-input {
@@ -76,6 +84,7 @@
     border: 1px solid #ccc;
     width: 200px;
     text-align: center;
+    font-family: 'LowresPixel', monospace;
   }
   
   .nickname-save-btn {
@@ -87,6 +96,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'LowresPixel', monospace;
   }
   
   .nickname-save-btn:hover {
