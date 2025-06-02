@@ -24,10 +24,12 @@ export const Chatroom = () => {
 
   const canvasRef = useRef(null);
   const ctxRef = useRef(null);
+  const fullscreenCanvasRef = useRef(null); // New: Add fullscreen canvas ref
   const [drawing, setDrawing] = useState(false);
   const [tool, setTool] = useState("pencil");
   const [color, setColor] = useState("black");
-  const [opacity, setOpacity] = useState(1); // New: Add opacity state
+  const [opacity, setOpacity] = useState(1);
+  const [fullscreenMode, setFullscreenMode] = useState(false); // New: Add fullscreen state
 
   const strokeWidths = {
     pen: 0.3,
@@ -50,7 +52,7 @@ export const Chatroom = () => {
     sendJoinMessage();
   }, [room, username]);
 
-  // New: Helper function to convert color to RGBA with opacity
+  // Helper function to convert color to RGBA with opacity
   const convertToRGBA = (colorName, opacity) => {
     const colorMap = {
       red: "255,0,0",
@@ -66,11 +68,24 @@ export const Chatroom = () => {
     const rgb = colorMap[colorName] || "0,0,0";
     return `rgba(${rgb},${opacity})`;
   };
+
+  // New: Helper function to get active canvas
+  const getActiveCanvas = () => 
+    fullscreenMode ? fullscreenCanvasRef.current : canvasRef.current;
+
+  // New: Toggle fullscreen mode
+  const toggleFullscreen = () => {
+    setFullscreenMode(!fullscreenMode);
+  };
   
 
   const startDrawing = (e) => {
     setDrawing(true);
-    const ctx = canvasRef.current.getContext("2d");
+    
+    const canvas = getActiveCanvas(); // Updated: Use active canvas
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext("2d");
     ctx.strokeStyle = color;
     ctx.beginPath();
     ctx.moveTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
@@ -78,7 +93,7 @@ export const Chatroom = () => {
 
     if (tool !== "eraser") {
       ctx.lineWidth = strokeWidths[tool] || 1.0;
-      ctx.strokeStyle = convertToRGBA(color, opacity); // Updated: Use opacity
+      ctx.strokeStyle = convertToRGBA(color, opacity);
     }
   };
 
@@ -101,15 +116,23 @@ export const Chatroom = () => {
 
   const stopDrawing = () => {
     setDrawing(false);
+    const canvas = getActiveCanvas(); // Updated: Use active canvas
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    ctx.closePath();
   };
 
   const clearCanvas = () => {
-    const ctx = canvasRef.current.getContext("2d");
-    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+    const canvas = getActiveCanvas(); // Updated: Use active canvas
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   };
 
   const saveCanvasImage = async () => {
-    const canvas = canvasRef.current;
+    const canvas = getActiveCanvas(); // Updated: Use active canvas
+    if (!canvas) return;
+    
     const imageDataUrl = canvas.toDataURL("image/png");
   await uploadDrawing({
     image: imageDataUrl,
@@ -186,7 +209,6 @@ export const Chatroom = () => {
                   ))}
                 </div>
 
-                {/* New: Add opacity slider */}
                 <div className="opacity-control">
                   <label htmlFor="opacity-slider">Opacity:</label>
                   <input
@@ -202,6 +224,10 @@ export const Chatroom = () => {
                 </div>
 
                 <div className="setting-buttons">
+                  {/* New: Add fullscreen button */}
+                  <button className="tool-button" onClick={toggleFullscreen}>
+                    Fullscreen Mode
+                  </button>
                   <button className="tool-button" onClick={clearCanvas}>
                     Clear
                   </button>
