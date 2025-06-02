@@ -77,7 +77,7 @@ function RoomSelect() {
             className="room-btn" 
             onClick={() => joinRoom(privateRoomRef.current.value)}
           >
-            ⟡₊ ⊹ Join Private Room ⟡₊ ⊹
+            ⟡₊ ⊹ Join &nbsp;&nbsp;Private &nbsp;&nbsp;Room ⟡₊ ⊹
           </button>
         </div>
       </div>

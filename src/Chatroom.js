@@ -166,7 +166,7 @@ export const Chatroom = () => {
                 </div>
 
                 <div className="color-buttons">
-                  {colors.map((c) => (
+                  {["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "black"].map((c) => (
                     <button
                       key={c}
                       onClick={() => setColor(c)}
@@ -174,6 +174,14 @@ export const Chatroom = () => {
                         backgroundColor: c,
                         color: c === "yellow" ? "black" : "white",
                         border: color === c ? "2px solid #333" : "none",
+                        padding: "0.2rem 0.5rem",
+                        fontSize: "0.9rem",
+                        borderRadius: "5px",
+                        fontFamily: "'LowresPixel', monospace",
+                        cursor: "pointer",
+                        transition: "background-color 0.3s ease",
+                        marginRight: "0.5rem",
+                        textAlign: "center"
                       }}
                     >
                       {c}
