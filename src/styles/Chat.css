@@ -12,3 +12,220 @@
 .chatgod-message .user {
     display: none; /* Hide the username */
 }
+
+.send-button {
+    padding: 0.2rem .5rem;
+    font-size: 0.9rem;
+    background-color: #9D8189;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .send-button:hover {
+    background-color: #7d5560;
+  }  
+
+  .tool-button {
+    padding: 0.2rem .5rem;
+    font-size: 0.9rem;
+    background-color: #9D8189;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tool-button:hover {
+    background-color: #7d5560;
+  }  
+
+  .chatroom-main {
+    display: flex;
+    height: calc(100vh - 80px); /* Adjust based on header size */
+  }
+  
+  .left-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+    background-color: #feecec;
+  }
+  
+  .drawings-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #feecec;
+  }
+  
+  .right-panel {
+    width: 40%;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+
+  /* Remove body scrolling */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  /* Top-level layout */
+  .chatroom-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .chatroom-header {
+    padding: 0.5rem 1rem;
+    background-color: #feecec;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Split screen between left and right */
+  .chatroom-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  /* Left: drawings + canvas */
+  .left-panel {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+    overflow: hidden;
+  }
+  
+  /* Drawings scrollable area */
+  .drawings-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  /* Canvas and buttons fixed */
+  .canvas-area {
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+  }
+
+  .drawing-canvas {
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 2px;
+  }
+  
+  
+  /* Right panel: chat */
+  .right-panel {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  /* Chat content scrolls */
+  .right-panel .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  
+  /* Chat input always pinned to bottom */
+  .right-panel .chat-input {
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+    background-color: #fafafa;
+  }
+  
+  /* Shared button styling */
+  .tool-button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+    background-color: #9D8189;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tool-button:hover {
+    background-color: #7f636a;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    min-height: 0; /* Ensures it shrinks properly */
+    background-color: #feecec;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+    background-color: #feecec;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .chat-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .chat-header {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+  }
+  
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #fff;
+  }
+  
+  .message {
+    margin-bottom: 0.5rem;
+  }
+  
+  .new-message-form {
+    display: flex;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  .new-message-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  

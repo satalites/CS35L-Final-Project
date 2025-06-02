@@ -50,37 +50,40 @@ export const Chat = (props) => {
         setNewMessage("");
     };
 
-    return <div className="chat-app"> 
-        {/* <div className="header"> */}
-            <h2>{room}</h2>
-        {/* </div> */}
-        <div className="messages"> 
+    return (
+        <div className="chat-app">
+          <div className="chat-header">
+            <h2>{"messages"}</h2>
+          </div>
+      
+          <div className="messages">
             {messages.map((message) => {
-                const isChatG0D = message.user === "CHATG0D";
-
-            return (
-                <div 
-                    key={message.id} 
-                    className={`message ${isChatG0D ? "chatgod-message" : ""}`}
+              const isChatG0D = message.user === "CHATG0D";
+              return (
+                <div
+                  key={message.id}
+                  className={`message ${isChatG0D ? "chatgod-message" : ""}`}
                 >
-                    {!isChatG0D && <span className="user">{message.user}: </span>}
-                     <span className="message-text">{message.text}</span>
+                  {!isChatG0D && <span className="user">{message.user}: </span>}
+                  <span className="message-text">{message.text}</span>
                 </div>
-        );
-    })}
-    <div ref={messagesEndRef} />
-</div>
-
-        <form onSubmit={handleSubmit} className="new-message-form">
-            <input 
-                className="new-message-input" 
-                placeholder="chat chat chat°❀⋆.ೃ࿔*:･"
-                onChange={(e) => setNewMessage(e.target.value)}
-                value={newMessage}
+              );
+            })}
+            <div ref={messagesEndRef} />
+          </div>
+      
+          <form onSubmit={handleSubmit} className="new-message-form">
+            <input
+              className="new-message-input"
+              placeholder="chat chat chat°❀⋆.ೃ࿔*:･"
+              onChange={(e) => setNewMessage(e.target.value)}
+              value={newMessage}
             />
             <button type="submit" className="send-button">
-                send
+              send
             </button>
-        </form>
-    </div>
+          </form>
+        </div>
+      );
+      
 };

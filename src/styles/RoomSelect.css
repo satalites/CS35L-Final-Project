@@ -1,0 +1,95 @@
+.room-selection-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;
+    width: 100vw;
+    background-color: #feebeb;
+    font-family: sans-serif;
+  }
+  
+  .rooms-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .room-title {
+    font-size: 3rem;          
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .room-btn {
+    padding: 1rem 2rem;        
+    margin: 1rem;
+    font-size: 1.5rem;         
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background-color: #9D8189;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .room-btn:hover {
+    background-color: #7d5560;
+    cursor: pointer;
+  }
+  
+  .private-room-input {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .room-input {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .nickname-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .nickname-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nickname-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .nickname-save-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    background-color: #9D8189;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nickname-save-btn:hover {
+    background-color: #7d5560;
+  }
+  

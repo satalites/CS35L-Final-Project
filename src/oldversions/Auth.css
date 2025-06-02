@@ -1,0 +1,18 @@
+.auth {
+    background-color: #feebeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .auth button {
+    font-size: 40px;
+    padding: 12px 24px;
+    background-color: #9D8189;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  

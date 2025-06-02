@@ -37,7 +37,7 @@ useEffect(() => {
 
   return (
     <div className="chat-app">
-      <h2>{room} – Drawings</h2>
+      <h2>drawings</h2>
       <div className="messages">
         {drawings.map((drawing) => {
           return (

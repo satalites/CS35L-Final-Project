@@ -1,0 +1,21 @@
+.header-container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+  
+  .logout-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: #9D8189;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: #7d5560;
+  }  
