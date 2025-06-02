@@ -153,7 +153,7 @@ export const Chatroom = () => {
     return null;
   }
 
-  // New: Fullscreen mode render
+  // Fullscreen mode render
   if (fullscreenMode) {
     return (
       <div style={{ display: "flex", height: "100vh", width: "100vw" }}>
@@ -182,20 +182,98 @@ export const Chatroom = () => {
                   color: tool === t ? "white" : "black",
                   border: "none",
                   borderRadius: "4px",
-                  cursor: "pointer"
+                  cursor: "pointer",
+                  width: "100%"
                 }}
               >
-                {t}
+                {t.charAt(0).toUpperCase() + t.slice(1)}
               </button>
             ))}
           </div>
-          
-          {/* Back button placeholder */}
+
+          {/* Color buttons */}
+          <div className="color-buttons" style={{ marginTop: "15px" }}>
+            <h4 style={{ margin: "0 0 8px 0", fontSize: "14px" }}>Colors:</h4>
+            {colors.map((c) => (
+              <button
+                key={c}
+                onClick={() => setColor(c)}
+                style={{
+                  backgroundColor: c,
+                  color: c === "yellow" ? "black" : "white",
+                  border: color === c ? "3px solid #333" : "1px solid #ccc",
+                  margin: "2px",
+                  padding: "8px 12px",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                  fontSize: "12px",
+                  minWidth: "70px"
+                }}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+
+          {/* Opacity slider */}
+          <div style={{ marginTop: "15px" }}>
+            <label htmlFor="fullscreen-opacity-slider" style={{ fontSize: "14px", fontWeight: "bold" }}>
+              Opacity:
+            </label>
+            <input
+              id="fullscreen-opacity-slider"
+              type="range"
+              min="0.1"
+              max="1"
+              step="0.1"
+              value={opacity}
+              onChange={(e) => setOpacity(parseFloat(e.target.value))}
+              style={{ width: "100%", marginTop: "5px" }}
+            />
+            <span style={{ fontSize: "12px", color: "#666" }}>{opacity}</span>
+          </div>
+
+          {/* Action buttons */}
           <div style={{ marginTop: "20px" }}>
+            <button 
+              onClick={clearCanvas}
+              style={{
+                width: "100%",
+                margin: "2px 0",
+                padding: "8px 12px",
+                backgroundColor: "#dc3545",
+                color: "white",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer"
+              }}
+            >
+              Clear Canvas
+            </button>
+            <button 
+              onClick={saveCanvasImage}
+              style={{
+                width: "100%",
+                margin: "2px 0",
+                padding: "8px 12px",
+                backgroundColor: "#28a745",
+                color: "white",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer"
+              }}
+            >
+              Send Drawing
+            </button>
+          </div>
+          
+          {/* Back button */}
+          <div style={{ marginTop: "auto", paddingTop: "20px" }}>
             <button 
               onClick={() => setFullscreenMode(false)}
               style={{
-                padding: "8px 12px",
+                width: "100%",
+                padding: "10px 12px",
                 backgroundColor: "#6c757d",
                 color: "white",
                 border: "none",
@@ -203,30 +281,22 @@ export const Chatroom = () => {
                 cursor: "pointer"
               }}
             >
-              Back
+              ← Back to Chat
             </button>
           </div>
         </div>
 
-        {/* Fullscreen Canvas placeholder */}
-        <div style={{ 
-          flexGrow: 1, 
-          backgroundColor: "#ffffff",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}>
-          <canvas
-            ref={fullscreenCanvasRef}
-            width={window.innerWidth - 200}
-            height={window.innerHeight}
-            onMouseDown={startDrawing}
-            onMouseMove={draw}
-            onMouseUp={stopDrawing}
-            onMouseLeave={stopDrawing}
-            style={{ display: "block", border: "1px solid #ccc" }}
-          />
-        </div>
+        {/* Fullscreen Canvas */}
+        <canvas
+          ref={fullscreenCanvasRef}
+          width={window.innerWidth - 200}
+          height={window.innerHeight}
+          onMouseDown={startDrawing}
+          onMouseMove={draw}
+          onMouseUp={stopDrawing}
+          onMouseLeave={stopDrawing}
+          style={{ display: "block", flexGrow: 1, cursor: "crosshair" }}
+        />
       </div>
     );
   }
