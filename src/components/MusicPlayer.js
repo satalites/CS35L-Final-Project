@@ -1,6 +1,6 @@
 // src/MusicPlayer.js
 import React, { useRef, useState, useEffect } from 'react';
-import DKtrack from '../assets/dksong.mp3'
+import track from '../assets/menumusic.mp3'
 import pauseIcon from '../assets/pause.png'
 import playIcon from '../assets/play.png'
 import keyPress from '../assets/key-press.mp3'
@@ -58,16 +58,14 @@ export const MusicPlayer = () => {
         <div 
             className="MusicPlayer"
             style={{
-                border: '2px solid #ccc',
+                border: '1px solid #ccc',
                 padding: '20px',
-                borderRadius: '10px',
                 width: 'fit-content',
                 margin: '40px auto',
                 backgroundColor: '#f9f9f9',
-                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)'
             }}
         >
-            <audio ref={audioRef} src={DKtrack} autoPlay />
+            <audio ref={audioRef} src={track} autoPlay />
             <button onClick={handlePlayPause}>
                 <img
                     src={isPlaying ? pauseIcon : playIcon}
