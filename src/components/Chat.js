@@ -52,10 +52,6 @@ export const Chat = (props) => {
 
     return (
         <div className="chat-app">
-          <div className="chat-header">
-            <h2>{"messages"}</h2>
-          </div>
-      
           <div className="messages">
             {messages.map((message) => {
               const isChatG0D = message.user === "CHATG0D";
