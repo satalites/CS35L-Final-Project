@@ -185,23 +185,7 @@ body,
 html {
   overflow-x: hidden;
 }
-/* 
-.collage-img {
-  animation: float 3s ease-in-out infinite;
-}
 
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-18px);
-  }
-} */
-/* 
 .login-content h1 {
   opacity: 0;
   transform: translateY(-40px);
@@ -271,7 +255,7 @@ html {
   to {
     opacity: 0.98;
   }
-} */
+}
 
 @keyframes bob1 {
 
@@ -405,8 +389,7 @@ html {
   }
 }
 
-/* Slower, organic durations and delays */
-.img1 {
+/* .img1 {
   animation: bob1 4.2s ease-in-out infinite;
   animation-delay: 0.1s;
 }
@@ -459,4 +442,4 @@ html {
 .img11 {
   animation: bob11 5.3s ease-in-out infinite;
   animation-delay: 0.8s;
-}
+} */
