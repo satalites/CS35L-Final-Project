@@ -34,6 +34,7 @@ function RoomSelect() {
 
   const joinRoom = (roomName) => {
     if (!roomName) return;
+    cookies.set("room", roomName);
     navigate("/chat", { state: { room: roomName } });
   };
 

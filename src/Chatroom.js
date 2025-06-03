@@ -17,8 +17,7 @@ const colors = [
 export const Chatroom = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const room = location.state?.room;
-
+  const room = location.state?.room || cookies.get("room");
   const uid = auth.currentUser?.uid || cookies.get("uid");
   const username = cookies.get("username") || "Anonymous";
 
@@ -103,11 +102,12 @@ export const Chatroom = () => {
   };
 
   const leaveRoom = async () => {
+    cookies.set("room", ""); 
     await sendSystemMessage({ room, text: `${username} left the room` });
     navigate("/"); // go back to room select
   };
 
-  if (!room) {
+  if (!room || room == "") {
     navigate("/");
     return null;
   }
