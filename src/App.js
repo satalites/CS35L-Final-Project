@@ -1,4 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useRef, useEffect  } from 'react';
+import { Chat } from './components/Chat'
+import { Drawings } from './components/Drawings'
+import { signOut } from 'firebase/auth'
+import { addDoc, serverTimestamp, collection } from 'firebase/firestore' 
+import Cookies from 'universal-cookie'
+import { auth, db } from "./firebase-config"
+import doraemonGif from './assets/doraemon.gif'
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
