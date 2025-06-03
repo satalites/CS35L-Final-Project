@@ -15,6 +15,7 @@ body {
   overflow: hidden;
 }
 
+
 /* Collage images behind the text */
 .collage-container {
   position: absolute;
@@ -44,21 +45,21 @@ body {
 }
 
 .img2 {
-  top: 100px;
+  top: 10px;
   left: 560px;
   width: 300px;
-  z-index: 5;
+  z-index: 3;
 }
 
 .img3 {
-  top: 465px;
+  top: 545px;
   left: 400px;
   width: 270px;
   z-index: 4;
 }
 
 .img4 {
-  top: 130px;
+  top: 40px;
   left: 180px;
   width: 390px;
   z-index: 1;
@@ -85,10 +86,10 @@ body {
 }
 
 .img8 {
-  top: 150px;
+  top: 140px;
   left: 830px;
   width: 270px;
-  z-index: 2;
+  z-index: 4;
 }
 
 .img9 {
@@ -102,11 +103,11 @@ body {
   top: 250px;
   left: 850px;
   width: 270px;
-  z-index: 2;
+  z-index: 5;
 }
 
 .img11 {
-  top: 400px;
+  top: 420px;
   left: 150px;
   width: 270px;
   z-index: 10;
@@ -125,14 +126,18 @@ body {
 }
 
 .login-content h1 {
-  font-size: 64px;
+  font-size: 96px;
   margin-bottom: 32px;
   font-family: 'ArcadeClassic', sans-serif;
   text-align: center;
   line-height: 1.1;
   letter-spacing: 2px;
-  background: none;
   color: #222;
+  /* background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  padding-left: 9px;
+  padding-right: 9px; */
 }
 
 .login-content button {
@@ -179,4 +184,279 @@ body {
 body,
 html {
   overflow-x: hidden;
+}
+/* 
+.collage-img {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+} */
+/* 
+.login-content h1 {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: slideIn 0.8s 0.2s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.collage-img {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+.collage-img.img1 {
+  animation-delay: 0.5s;
+}
+
+.collage-img.img2 {
+  animation-delay: 1.0s;
+}
+
+.collage-img.img3 {
+  animation-delay: 1.2s;
+}
+
+.collage-img.img4 {
+  animation-delay: 0.4s;
+}
+
+.collage-img.img5 {
+  animation-delay: 0.5s;
+}
+
+.collage-img.img6 {
+  animation-delay: 0.7s;
+}
+
+.collage-img.img7 {
+  animation-delay: 0.8s;
+}
+
+.collage-img.img8 {
+  animation-delay: 0.9s;
+}
+
+.collage-img.img9 {
+  animation-delay: 1.0s;
+}
+.collage-img.img10 {
+  animation-delay: 1.2s;
+}
+
+.collage-img.img11 {
+  animation-delay: 1.1s;
+}
+
+.collage-img.img12 {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 0.98;
+  }
+} */
+
+@keyframes bob1 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes bob2 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bob3 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes bob4 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bob5 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-22px);
+  }
+}
+
+@keyframes bob6 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes bob7 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bob8 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes bob9 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-17px);
+  }
+}
+
+@keyframes bob10 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+@keyframes bob11 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-19px);
+  }
+}
+
+/* Slower, organic durations and delays */
+.img1 {
+  animation: bob1 4.2s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+
+.img2 {
+  animation: bob2 5.0s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.img3 {
+  animation: bob3 4.5s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.img4 {
+  animation: bob4 5.2s ease-in-out infinite;
+  animation-delay: 1.1s;
+}
+
+.img5 {
+  animation: bob5 4.8s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.img6 {
+  animation: bob6 5.4s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.img7 {
+  animation: bob7 4.6s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.img8 {
+  animation: bob8 4.4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.img9 {
+  animation: bob9 5.1s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.img10 {
+  animation: bob10 4.9s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.img11 {
+  animation: bob11 5.3s ease-in-out infinite;
+  animation-delay: 0.8s;
 }

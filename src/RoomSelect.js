@@ -53,7 +53,7 @@ function RoomSelect() {
                 placeholder="Enter your nickname"
             />
             <button className="nickname-save-btn" onClick={saveNickname}>
-                ⟡ Save ⟡
+                save ⟡
             </button>
             </div>
         {["*•̩̩͙✩•̩̩͙* Room 1 *•̩̩͙✩•̩̩͙*", "*•̩̩͙✩•̩̩͙* Room 2 *•̩̩͙✩•̩̩͙*", "*•̩̩͙✩•̩̩͙* Room 3 *•̩̩͙✩•̩̩͙*", "*•̩̩͙✩•̩̩͙* Room 4 *•̩̩͙✩•̩̩͙*"].map((room, i) => (
