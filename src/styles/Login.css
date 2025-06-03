@@ -37,59 +37,79 @@ body {
 
 /* Example image positions */
 .img1 {
-  top: 30px;
-  left: 60px;
-  width: 180px;
-  z-index: 2;
+  top: 375px;
+  left: 880px;
+  width: 260px;
+  z-index: 4;
 }
 
 .img2 {
-  top: 0px;
-  left: 360px;
-  width: 260px;
-  z-index: 3;
+  top: 100px;
+  left: 560px;
+  width: 300px;
+  z-index: 5;
 }
 
 .img3 {
-  top: 120px;
-  left: 620px;
-  width: 210px;
+  top: 465px;
+  left: 400px;
+  width: 270px;
   z-index: 4;
 }
 
 .img4 {
-  top: 280px;
-  left: 850px;
-  width: 220px;
-  z-index: 3;
+  top: 130px;
+  left: 180px;
+  width: 390px;
+  z-index: 1;
 }
 
 .img5 {
-  top: 400px;
-  left: 700px;
+  top: 450px;
+  left: 0px;
   width: 180px;
-  z-index: 2;
+  z-index: 5;
 }
 
 .img6 {
-  top: 500px;
-  left: 400px;
-  width: 130px;
-  z-index: 2;
+  top: 450px;
+  left: 650px;
+  width: 370px;
+  z-index: 6;
 }
-
 .img7 {
-  top: 420px;
-  left: 120px;
-  width: 150px;
-  z-index: 2;
+  top: 240px;
+  left: -100px;
+  width: 350px;
+  z-index: 4;
 }
 
 .img8 {
-  top: 300px;
-  left: 20px;
-  width: 170px;
+  top: 150px;
+  left: 830px;
+  width: 270px;
   z-index: 2;
+}
+
+.img9 {
+  top: 130px;
+  left: 1px;
+  width: 260px;
+  z-index: 3;
+}
+
+.img10 {
+  top: 250px;
+  left: 850px;
+  width: 270px;
+  z-index: 2;
+}
+
+.img11 {
+  top: 400px;
+  left: 150px;
+  width: 270px;
+  z-index: 10;
 }
 
 /* Center text and button in front of collage */

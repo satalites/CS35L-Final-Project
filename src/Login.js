@@ -82,9 +82,10 @@ const collageImages = [
   { src: "/collage/derp.png", className: "collage-img img5", alt: "Derp smiley" },
   { src: "/collage/coolcat.png", className: "collage-img img6", alt: "Cool Cat" },
   { src: "/collage/cat.png", className: "collage-img img7", alt: "Cat" },
-  { src: "/collage/money.png", className: "collage-img img8", alt: "Money drawing" },
-  { src: "/collage/mrpotato.png", className: "collage-img img9", alt: "Mr. Potato Head" },
-  { src: "/collage/sunset.png", className: "collage-img img10", alt: "Sunset" },
+  { src: "/collage/money.png", className: "collage-img img8", alt: "Money" },
+  { src: "/collage/potato.png", className: "collage-img img9", alt: "Mr. Potato Head" },
+  { src: "/collage/tree.png", className: "collage-img img10", alt: "Palm Tree" },
+  { src: "/collage/angel.png", className: "collage-img img11", alt: "Angel" },
   // Add more as needed to match your collage
 ];
 
