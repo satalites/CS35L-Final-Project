@@ -30,6 +30,7 @@
   }  
 
   .tool-button {
+    font-family: 'LowresPixel', sans-serif;
     padding: 0.2rem .5rem;
     font-size: 0.9rem;
     background-color: #9D8189;
@@ -427,6 +428,7 @@ html, body {
 
 /* Action Buttons */
 .action-button {
+  font-family: 'LowresPixel', sans-serif;
   margin-top: 0.5rem;
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;

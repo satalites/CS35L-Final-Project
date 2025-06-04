@@ -77,7 +77,7 @@ export const MusicPlayer = () => {
             </button>
 
             <div>
-                <label>vol: </label>
+                <label>volume: </label>
                 <input
                     type="range"
                     min="0"
