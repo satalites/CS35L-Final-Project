@@ -162,23 +162,21 @@ export const Chatroom = () => {
         <div className="tool-sidebar" >
           <h3>Drawing Tools</h3>
             <div className="fullscreen-tools">
+            {["pen", "pencil", "marker", "brush", "eraser"].map((t) => (
               <button
-                 className={tool === "pen" ? "active" : ""}
-                 onClick={() => setTool("pen")}
-          >
-            Pen
-          </button>
-          <button
-            className={tool === "eraser" ? "active" : ""}
-            onClick={() => setTool("eraser")}
-          >
-            Eraser
-          </button>
-        </div>
+                key={t}
+                className={`tool-button ${tool === t ? "active" : ""}`}
+                onClick={() => setTool(t)}
+               >
+              {t}
+            </button>
+            ))}
+          </div>
+
 
           <h4>Colors</h4>
         <div className="color-buttons-grid">
-          {color.map((color) => (
+          {colors.map((color) => (
             <button
               key={color}
               className={`color-button ${color} ${color === color ? "selected" : ""}`}
@@ -200,12 +198,17 @@ export const Chatroom = () => {
         />
 
 
-          <div className="preview-container">
+         <div className="preview-container">
           <strong>Preview:</strong>
-          <div className="preview-box" style={{ color: color, opacity }}>
-            Hello
-          </div>
+            <div
+              className="preview-dot"
+              style={{
+              backgroundColor: color,
+              opacity: opacity
+             }}
+          ></div>
         </div>
+
 
           <button className="action-button clear-button" onClick={clearCanvas}>
           Clear

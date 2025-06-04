@@ -317,12 +317,15 @@ html, body {
 .tool-sidebar {
   width: 220px;
   padding: 1rem;
-  background-color: #fff;
+  background-color:#feecec; /* Pinkish background */
+  font-family: 'LowresPixel', sans-serif; /* Pixel font */
+  color: white;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #ccc;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
 }
+
 
 /* Section Headers */
 .tool-sidebar h3 {
@@ -345,8 +348,8 @@ html, body {
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;
   border-radius: 5px;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #9D8189;
+  color: white;
   border: 1px solid #ccc;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -354,13 +357,13 @@ html, body {
 
 .fullscreen-tools button.active {
   background-color: #9D8189;
-  color: white;
+  color: #ccc;
   font-weight: bold;
   border: none;
 }
 
 .fullscreen-tools button:hover {
-  background-color: #d8b4bc;
+  background-color: #7f636a;
 }
 
 /* Color Selection Grid */
@@ -431,21 +434,21 @@ html, body {
 }
 
 .clear-button {
-  background-color: #dc3545;
+  background-color: #9D8189;
   color: white;
 }
 
 .clear-button:hover {
-  background-color: #bb2d3b;
+  background-color: #7f636a;
 }
 
 .send-button {
-  background-color: #28a745;
+  background-color:#9D8189;
   color: white;
 }
 
 .send-button:hover {
-  background-color: #218838;
+  background-color: #7f636a;
 }
 
 .back-button {
@@ -464,6 +467,20 @@ html, body {
   display: block;
   background-color: #fff;
   cursor: crosshair;
+}
+
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-top: 8px;
+  border: 1px solid #ccc;
 }
 
   
