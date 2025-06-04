@@ -163,14 +163,14 @@ export const Chatroom = () => {
           <h3>Drawing Tools</h3>
             <div className="fullscreen-tools">
               <button
-                 className={selectedTool === "pen" ? "active" : ""}
-                 onClick={() => setSelectedTool("pen")}
+                 className={tool === "pen" ? "active" : ""}
+                 onClick={() => setTool("pen")}
           >
             Pen
           </button>
           <button
-            className={selectedTool === "eraser" ? "active" : ""}
-            onClick={() => setSelectedTool("eraser")}
+            className={tool === "eraser" ? "active" : ""}
+            onClick={() => setTool("eraser")}
           >
             Eraser
           </button>
@@ -178,12 +178,12 @@ export const Chatroom = () => {
 
           <h4>Colors</h4>
         <div className="color-buttons-grid">
-          {colorOptions.map((color) => (
+          {color.map((color) => (
             <button
               key={color}
-              className={`color-button ${color} ${selectedColor === color ? "selected" : ""}`}
+              className={`color-button ${color} ${color === color ? "selected" : ""}`}
               style={{ backgroundColor: color }}
-              onClick={() => setSelectedColor(color)}
+              onClick={() => setColor(color)}
             />
           ))}
         </div>
@@ -202,15 +202,15 @@ export const Chatroom = () => {
 
           <div className="preview-container">
           <strong>Preview:</strong>
-          <div className="preview-box" style={{ color: selectedColor, opacity }}>
+          <div className="preview-box" style={{ color: color, opacity }}>
             Hello
           </div>
         </div>
 
-          <button className="action-button clear-button" onClick={handleClear}>
+          <button className="action-button clear-button" onClick={clearCanvas}>
           Clear
         </button>
-        <button className="action-button send-button" onClick={handleSendDrawing}>
+        <button className="action-button send-button" onClick={saveCanvasImage}>
           Send Drawing
         </button>
         <button className="action-button back-button" onClick={() => setFullscreenMode(false)}>
