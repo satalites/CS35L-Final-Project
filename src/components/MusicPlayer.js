@@ -64,6 +64,7 @@ export const MusicPlayer = () => {
                 width: 'fit-content',
                 margin: '40px auto',
                 backgroundColor: '#f9f9f9',
+                fontFamily: 'LowresPixel',
             }}
         >
             <audio ref={audioRef} src={track} autoPlay />
