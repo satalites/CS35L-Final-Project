@@ -157,191 +157,66 @@ export const Chatroom = () => {
   // Fullscreen mode render
   if (fullscreenMode) {
     return (
-      <div style={{ display: "flex", height: "100vh", width: "100vw", backgroundColor: "#f8f9fa" }}>
+      <div className="fullscreen-container>
         {/* Sidebar with tools and colors */}
-        <div
-          className="tool-sidebar"
-          style={{
-            width: "220px",
-            padding: "15px",
-            backgroundColor: "#ffffff",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            borderRight: "2px solid #e9ecef",
-            boxShadow: "2px 0 5px rgba(0,0,0,0.1)"
-          }}
-        >
-          <h3 style={{ margin: "0 0 15px 0", fontSize: "18px", color: "#495057" }}>
-            Drawing Tools
-          </h3>
-
-          {/* Tool buttons */}
-          <div className="fullscreen-tools">
-            <h4 style={{ margin: "0 0 8px 0", fontSize: "14px", color: "#6c757d" }}>Brush Type:</h4>
-            {["pen", "pencil", "marker", "brush", "eraser"].map((t) => (
+        <div className="tool-sidebar" >
+          <h3>Drawing Tools</h3>
+            <div className="fullscreen-tools">
               <button
-                key={t}
-                onClick={() => setTool(t)}
-                style={{
-                  margin: "3px 0",
-                  padding: "10px 15px",
-                  backgroundColor: tool === t ? "#007bff" : "#f8f9fa",
-                  color: tool === t ? "white" : "#495057",
-                  border: tool === t ? "2px solid #007bff" : "2px solid #e9ecef",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                  width: "100%",
-                  fontSize: "14px",
-                  fontWeight: tool === t ? "bold" : "normal",
-                  transition: "all 0.2s ease"
-                }}
-              >
-                {t === "eraser" ? " " : " "}{t.charAt(0).toUpperCase() + t.slice(1)}
-              </button>
-            ))}
-          </div>
+                 className={selectedTool === "pen" ? "active" : ""}
+                 onClick={() => setSelectedTool("pen")}
+          >
+            Pen
+          </button>
+          <button
+            className={selectedTool === "eraser" ? "active" : ""}
+            onClick={() => setSelectedTool("eraser")}
+          >
+            Eraser
+          </button>
+        </div>
 
-          {/* Color buttons */}
-          <div className="color-buttons" style={{ marginTop: "20px" }}>
-            <h4 style={{ margin: "0 0 10px 0", fontSize: "14px", color: "#6c757d" }}>Colors:</h4>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "4px" }}>
-              {colors.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setColor(c)}
-                  style={{
-                    backgroundColor: c,
-                    color: c === "yellow" ? "black" : "white",
-                    border: color === c ? "3px solid #333" : "2px solid #fff",
-                    margin: "1px",
-                    padding: "10px 8px",
-                    borderRadius: "6px",
-                    cursor: "pointer",
-                    fontSize: "11px",
-                    fontWeight: "bold",
-                    textShadow: c === "yellow" ? "none" : "1px 1px 1px rgba(0,0,0,0.5)",
-                    transform: color === c ? "scale(1.05)" : "scale(1)",
-                    transition: "all 0.2s ease"
-                  }}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Opacity slider */}
-          <div style={{ marginTop: "20px" }}>
-            <h4 style={{ margin: "0 0 8px 0", fontSize: "14px", color: "#6c757d" }}>
-              Opacity: <span style={{ color: "#007bff", fontWeight: "bold" }}>{Math.round(opacity * 100)}%</span>
-            </h4>
-            <input
-              id="fullscreen-opacity-slider"
-              type="range"
-              min="0.1"
-              max="1"
-              step="0.1"
-              value={opacity}
-              onChange={(e) => setOpacity(parseFloat(e.target.value))}
-              style={{ 
-                width: "100%", 
-                height: "6px",
-                backgroundColor: "#e9ecef",
-                borderRadius: "3px",
-                outline: "none"
-              }}
+          <h4>Colors</h4>
+        <div className="color-buttons-grid">
+          {colorOptions.map((color) => (
+            <button
+              key={color}
+              className={`color-button ${color} ${selectedColor === color ? "selected" : ""}`}
+              style={{ backgroundColor: color }}
+              onClick={() => setSelectedColor(color)}
             />
-          </div>
+          ))}
+        </div>
 
-          {/* Preview area */}
-          <div style={{ 
-            marginTop: "15px", 
-            padding: "10px", 
-            backgroundColor: "#f8f9fa", 
-            borderRadius: "6px",
-            border: "1px solid #e9ecef"
-          }}>
-            <h4 style={{ margin: "0 0 8px 0", fontSize: "12px", color: "#6c757d" }}>Preview:</h4>
-            <div style={{
-              width: "100%",
-              height: "30px",
-              backgroundColor: "white",
-              border: "1px solid #dee2e6",
-              borderRadius: "4px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center"
-            }}>
-              <div style={{
-                width: `${strokeWidths[tool] * 4}px`,
-                height: `${strokeWidths[tool] * 4}px`,
-                backgroundColor: convertToRGBA(color, opacity),
-                borderRadius: "50%",
-                maxWidth: "25px",
-                maxHeight: "25px"
-              }}></div>
-            </div>
-          </div>
+        <h4>Opacity</h4>
+        <input
+          id="fullscreen-opacity-slider"
+          type="range"
+          min="0.1"
+          max="1"
+          step="0.05"
+          value={opacity}
+          onChange={(e) => setOpacity(parseFloat(e.target.value))}
+        />
 
-          {/* Action buttons */}
-          <div style={{ marginTop: "20px" }}>
-            <button 
-              onClick={clearCanvas}
-              style={{
-                width: "100%",
-                margin: "4px 0",
-                padding: "10px 15px",
-                backgroundColor: "#dc3545",
-                color: "white",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer",
-                fontSize: "14px",
-                fontWeight: "bold"
-              }}
-            >
-               Clear Canvas
-            </button>
-            <button 
-              onClick={saveCanvasImage}
-              style={{
-                width: "100%",
-                margin: "4px 0",
-                padding: "10px 15px",
-                backgroundColor: "#28a745",
-                color: "white",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer",
-                fontSize: "14px",
-                fontWeight: "bold"
-              }}
-            >
-               Send Drawing
-            </button>
-          </div>
-          
-          {/* Back button */}
-          <div style={{ marginTop: "auto", paddingTop: "20px" }}>
-            <button 
-              onClick={() => setFullscreenMode(false)}
-              style={{
-                width: "100%",
-                padding: "12px 15px",
-                backgroundColor: "#6c757d",
-                color: "white",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer",
-                fontSize: "14px",
-                fontWeight: "bold"
-              }}
-            >
-              ← Back to Chat
-            </button>
+
+          <div className="preview-container">
+          <strong>Preview:</strong>
+          <div className="preview-box" style={{ color: selectedColor, opacity }}>
+            Hello
           </div>
         </div>
+
+          <button className="action-button clear-button" onClick={handleClear}>
+          Clear
+        </button>
+        <button className="action-button send-button" onClick={handleSendDrawing}>
+          Send Drawing
+        </button>
+        <button className="action-button back-button" onClick={() => setFullscreenMode(false)}>
+          Back to Chat
+        </button>
+      </div>
 
         {/* Fullscreen Canvas */}
         <canvas
