@@ -53,7 +53,7 @@ These tools were selected for their ability to support real-time, full-stack dev
 ##  Contributers 
 - Jackson Roodman
 - Caitlin Nguyen
-- Shane Handson
+- Shane Hanson
 - Anya Sengupta
 - Wyatt Brandt
   
