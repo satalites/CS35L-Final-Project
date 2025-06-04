@@ -3,6 +3,8 @@ import { signInWithPopup } from 'firebase/auth';
 import './styles/Login.css';
 import './styles/App.css';
 // import { useState } from 'react';
+import userAdjectives from './components/userAdjectives.js';
+import userNouns from './components/userNouns.js';
 
 import Cookies from 'universal-cookie'
 const cookies = new Cookies();
@@ -31,8 +33,11 @@ function Login() {
 
       let savedUsername = cookies.get("username");
       if (!savedUsername) {
-        const enteredUsername = "Anonymous" + Math.floor(Math.random() * 999);
-        cookies.set("username", enteredUsername);
+        const adj = userAdjectives[Math.floor(Math.random() * userAdjectives.length)];
+        const noun = userNouns[Math.floor(Math.random() * userNouns.length)];
+        const generatedUsername = `${adj}${noun}${Math.floor(10 + Math.random() * 90)}`;
+
+        cookies.set("username", generatedUsername);
       }
 
       // Firebase auth will handle the redirect logic in App.js

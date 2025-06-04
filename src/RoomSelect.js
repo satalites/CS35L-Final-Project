@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import "./styles/RoomSelect.css";
 import Header from "./components/Header";
+import userAdjectives from "./components/userAdjectives";
+import userNouns from "./components/userNouns";
 
 const cookies = new Cookies();
 
@@ -13,13 +15,17 @@ function RoomSelect() {
 
   // Load nickname from cookies on mount
   useEffect(() => {
-    const username = cookies.get("username");
-    if (username) {
-      setNickname(username);
-    }
+    let username = cookies.get("username");
+
     if (!username) {
-        setNickname("Anonymous" + Math.floor(Math.random() * 999));
+      const adj = userAdjectives[Math.floor(Math.random() * userAdjectives.length)];
+      const noun = userNouns[Math.floor(Math.random() * userNouns.length)];
+      const number = Math.floor(10 + Math.random() * 90);
+      username = `${adj}${noun}${number}`;
+      cookies.set("username", username, { path: "/" });
     }
+    
+    setNickname(username);
   }, []);
 
   const handleNicknameChange = (e) => {
