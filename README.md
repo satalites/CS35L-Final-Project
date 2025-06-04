@@ -60,7 +60,7 @@ These tools were selected for their ability to support real-time, full-stack dev
 - Anya Sengupta
 - Wyatt Brandt
   
-Each team member contributed to brainstorming, development, testing, and collaboration throughout the entire full-stack process.
+Each team member contributed to brainstorming, development, testing, and collaboration throughout the entire full-stack process. Conducted weekly meetings to brainstorm and test and seperate meetings for team members to collaborate together.
 
 ---
 
@@ -76,22 +76,29 @@ Each team member contributed to brainstorming, development, testing, and collabo
 
 ##  Lessons Learned 
 
-- Building a real-time full-stack web application from the ground up
+- Building and deploying a real-time full-stack web application from the ground up
 - Integrating Firebase for backend functionality and live updates
 - Effective debugging and resolving of merge conflicts
-- Structuring a React application with router-based navigation
+- Structuring a React application with router-based navigation instead of <href>
 - Collaborative development using GitHub (branches, pull requests, version control best practices)
 - Designing for UX with a focus on simplicity and expressiveness
+- Deploying website with our own url instead of Vercel deployment
+- Reading the specs before building the app incrementally
 
 ---
 
 ## Future Features 
 
-- Mobile app 
+- Functionality for Mobile use with an app 
 - Improved UI 
 - More Love 
-- suppport tablets and drawing stylist
-- Paint bucket : fill in space with color 
+- Suppport tablets and drawing stylist
+- Paint bucket : fill in space with color
+- Change size of canvas, size of eraser/brushes manually
+- More colors, use your own hex/rgb values
+- Save Drawings to Gallery or Download them
+- Like/Comment on Drawings
+- Remix Drawings
 
 
 
