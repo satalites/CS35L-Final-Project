@@ -1,5 +1,6 @@
 // src/MusicPlayer.js
 import React, { useRef, useState, useEffect } from 'react';
+import '../styles/App.css'
 import track from '../assets/menumusic.mp3'
 import pauseIcon from '../assets/pause.png'
 import playIcon from '../assets/play.png'

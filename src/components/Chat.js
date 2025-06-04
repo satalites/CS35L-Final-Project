@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy } from 'firebase/firestore';
 import { db, auth } from '../firebase-config';
+import '../styles/App.css'
 import '../styles/Chat.css';
 import Cookies from 'universal-cookie';
 
