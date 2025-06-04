@@ -41,6 +41,7 @@ Frontend:
 - JavaScript
 - React
 - react-router-dom
+  
  Backend/Services:
 
 - Firebase
