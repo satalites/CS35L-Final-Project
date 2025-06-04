@@ -17,6 +17,8 @@ A collaborative chatroom that lets users both **draw and chat** with one another
 
 ##  How to Run Locally
 
+This assumes you have already installed React. If not, instructions for installing and beginning React projects can be found at [this link](https://react.dev/learn/installation). After React is installed, the steps are as follows:
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/satalites/CS35L-Final-Project.git
@@ -39,15 +41,15 @@ Frontend:
 - HTML
 - CSS
 - JavaScript
-- React
-- react-router-dom
+- React as the main framework
+- react-router-dom for routing between pages within the site
   
  Backend/Services:
 
-- Firebase
+- Firebase for application database and database management
 - universal-cookie for session management
   
-These tools were selected for their ability to support real-time, full-stack development in a streamlined and scalable way.
+These tools were selected for their ability to support real-time, full-stack development in a streamlined and scalable way. 
 
 ---
 
