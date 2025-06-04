@@ -3,7 +3,8 @@ import Header from "./components/Header";
 import React, { useRef, useState, useEffect } from "react";
 import { Chat } from "./components/Chat";
 import { Drawings } from "./components/Drawings";
-import { auth } from "./firebase-config";
+import { MusicPlayer } from "./components/MusicPlayer";
+import { auth, db } from "./firebase-config";
 import Cookies from "universal-cookie";
 import "./styles/App.css";
 import "./styles/Chat.css";
@@ -17,8 +18,7 @@ const colors = [
 export const Chatroom = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const room = location.state?.room;
-
+  const room = location.state?.room || cookies.get("room");
   const uid = auth.currentUser?.uid || cookies.get("uid");
   const username = cookies.get("username") || "Anonymous";
 
@@ -144,11 +144,12 @@ export const Chatroom = () => {
   };
 
   const leaveRoom = async () => {
+    cookies.set("room", ""); 
     await sendSystemMessage({ room, text: `${username} left the room` });
     navigate("/"); // go back to room select
   };
 
-  if (!room) {
+  if (!room || room == "") {
     navigate("/");
     return null;
   }
@@ -367,10 +368,59 @@ export const Chatroom = () => {
       <Header />
       <div className="chatroom-container">
         <header className="chatroom-header">
-          <h2>Room: {room}</h2>
+          <h3>Room: {room}</h3>
         </header>
 
         <div className="chatroom-main">
+          {/*Sidebar*/}
+          <div className="sidebar">
+            <div className="music-player">
+              < MusicPlayer />
+            </div>
+
+            <div className="bottom-sidebar">
+              <div className="drawing-tools">
+                  <div className="tool-buttons">
+                    {["pen", "pencil", "marker", "brush", "eraser"].map((t) => (
+                      <button
+                        key={t}
+                        className="tool-button"
+                        onClick={() => setTool(t)}
+                      >
+                        {t}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="color-buttons">
+                    {colors.map((c) => (
+                      <button
+                        key={c}
+                        onClick={() => setColor(c)}
+                        className={color === c ? "selected" : ""}
+                        style={{ 
+                          backgroundColor: c,
+                          outline: color === c ? "3px solid white" : "none"
+                        }}
+                      ></button>
+                    ))}
+                  </div>
+              </div>
+            </div>
+
+        <div className="setting-buttons">
+          <button className="tool-button" onClick={saveCanvasImage}>
+            Send Drawing
+          </button>
+          <button className="tool-button" onClick={clearCanvas}>
+            Clear Drawing Pad
+          </button>
+          <button className="tool-button" onClick={leaveRoom}>
+            Leave Room
+          </button>
+          </div>
+        </div>
+
           {/* Left panel */}
           <div className="left-panel">
             <div className="drawings-scroll">
@@ -391,81 +441,6 @@ export const Chatroom = () => {
                   cursor: tool === "eraser" ? "crosshair" : "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"2\" fill=\"" + color + "\"/></svg>') 8 8, crosshair"
                 }}
               />
-
-              <div className="drawing-tools">
-                <div className="tool-buttons">
-                  {["pen", "pencil", "marker", "brush", "eraser"].map((t) => (
-                    <button
-                      key={t}
-                      className={`tool-button ${tool === t ? 'active' : ''}`}
-                      onClick={() => setTool(t)}
-                      style={{
-                        backgroundColor: tool === t ? "#007bff" : "",
-                        color: tool === t ? "white" : "",
-                        fontWeight: tool === t ? "bold" : "normal"
-                      }}
-                    >
-                      {t}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="color-buttons">
-                  {colors.map((c) => (
-                    <button
-                      key={c}
-                      onClick={() => setColor(c)}
-                      style={{
-                        backgroundColor: c,
-                        color: c === "yellow" ? "black" : "white",
-                        border: color === c ? "3px solid #333" : "1px solid #ccc",
-                        transform: color === c ? "scale(1.1)" : "scale(1)",
-                        transition: "all 0.2s ease"
-                      }}
-                    >
-                      {c}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="opacity-control">
-                  <label htmlFor="opacity-slider">
-                    Opacity: <strong>{Math.round(opacity * 100)}%</strong>
-                  </label>
-                  <input
-                    id="opacity-slider"
-                    type="range"
-                    min="0.1"
-                    max="1"
-                    step="0.1"
-                    value={opacity}
-                    onChange={(e) => setOpacity(parseFloat(e.target.value))}
-                  />
-                </div>
-
-                <div className="setting-buttons">
-                  <button 
-                    className="tool-button" 
-                    onClick={toggleFullscreen}
-                    style={{
-                      backgroundColor: "#17a2b8",
-                      color: "white",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    Fullscreen
-                  </button>
-                  <button className="tool-button" onClick={clearCanvas}>
-                    Clear
-                  </button>
-                  <button className="tool-button" onClick={saveCanvasImage}>
-                    Send Drawing
-                  </button>
-                  <button className="tool-button" onClick={leaveRoom}>
-                    Leave Room
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
 
