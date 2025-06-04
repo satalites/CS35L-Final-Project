@@ -173,38 +173,14 @@ export const Chatroom = () => {
             ))}
           </div>
 
-
           <h4>Colors</h4>
         <div className="color-buttons-grid">
           {colors.map((color) => (
             <button
               key={color}
-              className={`color-button ${color} ${color === color ? "selected" : ""}`}
+              className={'color-button ${color} ${color === color ? "selected" : ""}'}
               style={{ backgroundColor: color }}
               onClick={() => setColor(color)}
-
-              <button
-                 className={selectedTool === "pen" ? "active" : ""}
-                 onClick={() => setSelectedTool("pen")}
-          >
-            Pen
-          </button>
-          <button
-            className={selectedTool === "eraser" ? "active" : ""}
-            onClick={() => setSelectedTool("eraser")}
-          >
-            Eraser
-          </button>
-        </div>
-
-          <h4>Colors</h4>
-        <div className="color-buttons-grid">
-          {colorOptions.map((color) => (
-            <button
-              key={color}
-              className={`color-button ${color} ${selectedColor === color ? "selected" : ""}`}
-              style={{ backgroundColor: color }}
-              onClick={() => setSelectedColor(color)}
             />
           ))}
         </div>
