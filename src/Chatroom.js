@@ -162,6 +162,27 @@ export const Chatroom = () => {
         <div className="tool-sidebar" >
           <h3>Drawing Tools</h3>
             <div className="fullscreen-tools">
+            {["pen", "pencil", "marker", "brush", "eraser"].map((t) => (
+              <button
+                key={t}
+                className={`tool-button ${tool === t ? "active" : ""}`}
+                onClick={() => setTool(t)}
+               >
+              {t}
+            </button>
+            ))}
+          </div>
+
+
+          <h4>Colors</h4>
+        <div className="color-buttons-grid">
+          {colors.map((color) => (
+            <button
+              key={color}
+              className={`color-button ${color} ${color === color ? "selected" : ""}`}
+              style={{ backgroundColor: color }}
+              onClick={() => setColor(color)}
+
               <button
                  className={selectedTool === "pen" ? "active" : ""}
                  onClick={() => setSelectedTool("pen")}
@@ -199,18 +220,23 @@ export const Chatroom = () => {
           onChange={(e) => setOpacity(parseFloat(e.target.value))}
         />
 
-
-          <div className="preview-container">
+         <div className="preview-container">
           <strong>Preview:</strong>
-          <div className="preview-box" style={{ color: selectedColor, opacity }}>
-            Hello
-          </div>
+            <div
+              className="preview-dot"
+              style={{
+              backgroundColor: color,
+              opacity: opacity
+             }}
+          ></div>
         </div>
 
-          <button className="action-button clear-button" onClick={handleClear}>
+
+          <button className="action-button clear-button" onClick={clearCanvas}>
           Clear
         </button>
-        <button className="action-button send-button" onClick={handleSendDrawing}>
+        <button className="action-button send-button" onClick={saveCanvasImage}>
+          
           Send Drawing
         </button>
         <button className="action-button back-button" onClick={() => setFullscreenMode(false)}>
