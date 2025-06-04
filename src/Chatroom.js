@@ -415,6 +415,9 @@ export const Chatroom = () => {
           <button className="tool-button" onClick={clearCanvas}>
             Clear Drawing Pad
           </button>
+          <button className="tool-button" onClick={() => setFullscreenMode(true)}>
+            Fullscreen Mode
+          </button>
           <button className="tool-button" onClick={leaveRoom}>
             Leave Room
           </button>
