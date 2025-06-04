@@ -157,7 +157,7 @@ export const Chatroom = () => {
   // Fullscreen mode render
   if (fullscreenMode) {
     return (
-      <div className="fullscreen-container>
+      <div className="fullscreen-container">
         {/* Sidebar with tools and colors */}
         <div className="tool-sidebar" >
           <h3>Drawing Tools</h3>
