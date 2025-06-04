@@ -88,7 +88,8 @@ Each team member contributed to brainstorming, development, testing, and collabo
 - Mobile app 
 - Improved UI 
 - More Love 
-- suppport tablets and drawing stylist 
+- suppport tablets and drawing stylist
+- Paint bucket : fill in space with color 
 
 
 
