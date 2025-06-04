@@ -9,6 +9,7 @@
   }
   
   .rooms-list {
+    font-family: 'LowresPixel', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,10 +20,12 @@
     font-size: 3rem;          
     margin-bottom: 2rem;
     color: #333;
+    font-family: 'LowresPixel', sans-serif;
     font-weight: bold;
   }
   
   .room-btn {
+    font-family: 'LowresPixel', sans-serif;
     padding: 1rem 2rem;        
     margin: 1rem;
     font-size: 1.5rem;         
@@ -47,6 +50,7 @@
   }
   
   .room-input {
+    font-family: 'LowresPixel', sans-serif;
     padding: 0.75rem 1rem;
     margin-bottom: 1rem;
     font-size: 1.25rem;
@@ -70,6 +74,7 @@
   }
   
   .nickname-input {
+    font-family: 'LowresPixel', sans-serif;
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 5px;
@@ -79,6 +84,7 @@
   }
   
   .nickname-save-btn {
+    font-family: 'LowresPixel', sans-serif;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     border: none;
