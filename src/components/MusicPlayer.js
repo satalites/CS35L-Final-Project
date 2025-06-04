@@ -1,5 +1,6 @@
 // src/MusicPlayer.js
 import React, { useRef, useState, useEffect } from 'react';
+import '../styles/App.css'
 import track from '../assets/menumusic.mp3'
 import pauseIcon from '../assets/pause.png'
 import playIcon from '../assets/play.png'
@@ -63,6 +64,7 @@ export const MusicPlayer = () => {
                 width: 'fit-content',
                 margin: '40px auto',
                 backgroundColor: '#f9f9f9',
+                fontFamily: 'LowresPixel',
             }}
         >
             <audio ref={audioRef} src={track} autoPlay />

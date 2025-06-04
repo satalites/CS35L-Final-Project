@@ -182,6 +182,29 @@ export const Chatroom = () => {
               className={`color-button ${color} ${color === color ? "selected" : ""}`}
               style={{ backgroundColor: color }}
               onClick={() => setColor(color)}
+
+              <button
+                 className={selectedTool === "pen" ? "active" : ""}
+                 onClick={() => setSelectedTool("pen")}
+          >
+            Pen
+          </button>
+          <button
+            className={selectedTool === "eraser" ? "active" : ""}
+            onClick={() => setSelectedTool("eraser")}
+          >
+            Eraser
+          </button>
+        </div>
+
+          <h4>Colors</h4>
+        <div className="color-buttons-grid">
+          {colorOptions.map((color) => (
+            <button
+              key={color}
+              className={`color-button ${color} ${selectedColor === color ? "selected" : ""}`}
+              style={{ backgroundColor: color }}
+              onClick={() => setSelectedColor(color)}
             />
           ))}
         </div>
@@ -196,7 +219,6 @@ export const Chatroom = () => {
           value={opacity}
           onChange={(e) => setOpacity(parseFloat(e.target.value))}
         />
-
 
          <div className="preview-container">
           <strong>Preview:</strong>
@@ -214,6 +236,7 @@ export const Chatroom = () => {
           Clear
         </button>
         <button className="action-button send-button" onClick={saveCanvasImage}>
+          
           Send Drawing
         </button>
         <button className="action-button back-button" onClick={() => setFullscreenMode(false)}>
@@ -293,7 +316,6 @@ export const Chatroom = () => {
           <button className="tool-button" onClick={clearCanvas}>
             Clear Drawing Pad
           </button>
-
           <button className="tool-button" onClick={() => setFullscreenMode(true)}>
             Fullscreen Mode
           </button>

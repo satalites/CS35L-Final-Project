@@ -15,7 +15,7 @@ function Header() {
   const handleLogout = async () => {
     await signOut(auth);
     cookies.remove("auth-token");
-    cookies.remove("username");
+    // cookies.remove("username");
     navigate("/");
   };
 

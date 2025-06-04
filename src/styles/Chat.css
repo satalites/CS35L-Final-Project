@@ -317,15 +317,16 @@ html, body {
 .tool-sidebar {
   width: 220px;
   padding: 1rem;
+
   background-color:#feecec; /* Pinkish background */
   font-family: 'LowresPixel', sans-serif; /* Pixel font */
   color: white;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #ccc;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
 }
-
 
 /* Section Headers */
 .tool-sidebar h3 {
@@ -364,6 +365,7 @@ html, body {
 
 .fullscreen-tools button:hover {
   background-color: #7f636a;
+
 }
 
 /* Color Selection Grid */
@@ -434,17 +436,18 @@ html, body {
 }
 
 .clear-button {
+
   background-color: #9D8189;
   color: white;
 }
 
 .clear-button:hover {
+
   background-color: #7f636a;
 }
 
 .send-button {
   background-color:#9D8189;
-  color: white;
 }
 
 .send-button:hover {
@@ -469,6 +472,7 @@ html, body {
   cursor: crosshair;
 }
 
+
 .preview-container {
   display: flex;
   flex-direction: column;
@@ -482,5 +486,3 @@ html, body {
   margin-top: 8px;
   border: 1px solid #ccc;
 }
-
-  

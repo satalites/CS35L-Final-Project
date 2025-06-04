@@ -48,7 +48,7 @@ useEffect(() => {
                 <img
                   src={drawing.image}
                   alt="Drawing"
-                  style={{ maxWidth: "100%", borderRadius: "8px", marginTop: "0.5rem" }}
+                  style={{ maxWidth: "550px", maxHeight: "250px",  borderRadius: "8px", marginTop: "0.5rem" }}
                 />
               </div>
             </div>
