@@ -10,18 +10,18 @@ import Cookies from 'universal-cookie'
 const cookies = new Cookies();
 
 const collageImages = [
-  { src: "/collage/jake.png", className: "collage-img img1", alt: "Jake" },
+  { src: "/collage/sircat.png", className: "collage-img img1", alt: "Sir Cat" },
   { src: "/collage/face.png", className: "collage-img img2", alt: "Face" },
-  { src: "/collage/face_carrot.png", className: "collage-img img3", alt: "Face with carrot" },
-  { src: "/collage/ball.png", className: "collage-img img4", alt: "Basketball court" },
-  { src: "/collage/derp.png", className: "collage-img img5", alt: "Derp smiley" },
-  { src: "/collage/coolcat.png", className: "collage-img img6", alt: "Cool Cat" },
-  { src: "/collage/cat.png", className: "collage-img img7", alt: "Cat" },
-  { src: "/collage/money.png", className: "collage-img img8", alt: "Money" },
-  { src: "/collage/potato.png", className: "collage-img img9", alt: "Mr. Potato Head" },
-  { src: "/collage/tree.png", className: "collage-img img10", alt: "Palm Tree" },
+  { src: "/collage/deltarune.png", className: "collage-img img3", alt: "Deltarune" },
+  { src: "/collage/meme.png", className: "collage-img img4", alt: "meme" },
+  { src: "/collage/wii.png", className: "collage-img img6", alt: "wii" },
+  { src: "/collage/ryuk.png", className: "collage-img img7", alt: "ryuk" },
+  { src: "/collage/rain.png", className: "collage-img img8", alt: "rain" },
+  { src: "/collage/roses.png", className: "collage-img img9", alt: "roses" },
+  { src: "/collage/ball.png", className: "collage-img img10", alt: "ball" },
   { src: "/collage/angel.png", className: "collage-img img11", alt: "Angel" },
-
+  { src: "/collage/burger.png", className: "collage-img img13", alt: "Burger" },
+  // Add more as needed to match your collage
 ];
 
 function Login() {
@@ -57,6 +57,7 @@ function Login() {
         <h1>WELCOME TO 1000WORDS</h1>
         <button onClick={signInWithGoogle}>Let's get drawing!</button>
       </div>
+      {/* <h3>a picture is worth a 1000words</h3> */}
     </div>
   );
 }
